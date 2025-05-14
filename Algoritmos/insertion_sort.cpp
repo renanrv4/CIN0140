@@ -2,6 +2,11 @@
 
 using namespace std;
 
+/*
+Insere elementos nas suas posições corretas
+Realizando um shift right para realocar elementos no vetor, e
+garantir que o elemento esteja na posição correta
+*/ 
 void insertion_sort(vector<int> v) {
     for(int i = 1; i < v.size(); i++) {
         int val = v[i];

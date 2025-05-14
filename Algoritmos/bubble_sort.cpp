@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Faz substituições com valores vizinhos até o array ficar ordenado
 void bubble_sort(vector<int> v) {
     for(int i = 0; i < v.size()-1; i++) {
         for(int j = 0; j < v.size()-1-i; j++) {

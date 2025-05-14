@@ -2,11 +2,13 @@
 
 using namespace std;
 
+// Função para realizar a junção dos arrays
 void merge_method(vector<int>& v, int l, int r) {
     vector<int> temp(v.size());
     for(int i = l; i <= r; i++) { temp[i] = v[i]; }
     int m = floor((l+r)/2);
     int i1 = l; int i2 = m + 1;
+    // Substituindo os valores no array
     for(int curr = l; curr <= r; curr++) {
         if(i1 == m+1) { v[curr] = temp[i2++]; }
         else if(i2 > r) { v[curr] = temp[i1++]; }
@@ -18,6 +20,7 @@ void merge_method(vector<int>& v, int l, int r) {
     }
 }
 
+// Separa o array inicial em metades de forma recursiva
 void merge_sort(vector<int>& v, int l, int r) {
     if(l < r) {
         int m = floor((l+r)/2);
