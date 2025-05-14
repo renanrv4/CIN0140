@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/*
+Implemente o algoritmo mergesort para ordenar 
+um array de inteiros de forma não-decrescente.
+*/
 void merge_method(vector<int>& vect, int l, int r) {
     vector<int> temp(vect.size());
     for(int n = l; n <= r; n++) { temp[n] = vect[n]; }
