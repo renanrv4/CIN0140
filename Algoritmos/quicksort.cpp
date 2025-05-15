@@ -2,6 +2,29 @@
 
 using namespace std;
 
+// Versão que eu consegui realizar o quicksort corretamente
+int partition(vector<int>& vect, int l, int r) {
+    int p = vect[l];
+    int i = l-1;
+    int j = r+1;
+    while(true) {
+        do {
+            i++;
+        } while(i <= p && vect[i] <= p);
+        do {
+            j--;
+        } while(vect[j] > p);
+        if(i >= j) {
+            break;
+        }
+        swap(vect[i], vect[j]);
+    }
+    swap(vect[l], vect[j]);
+    return j;
+}
+
+// Preciso encontrar o erro dessa versão
+/*
 int partition(vector<int>& vect, int l, int r) {
     int p = vect[l];
     int i = l+1;
@@ -19,6 +42,7 @@ int partition(vector<int>& vect, int l, int r) {
     swap(vect[l], vect[j]);
     return j;
 }
+*/
 
 void quick_sort(vector<int>& vect, int l, int r) {
     if(l < r) {
