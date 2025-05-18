@@ -23,22 +23,19 @@ int partition(vector<int>& vect, int l, int r) {
     return j;
 }
 
-// Preciso encontrar o erro dessa versão
+// Versão corrigida
 /*
 int partition(vector<int>& vect, int l, int r) {
-    int p = vect[l];
-    int i = l+1;
+    int p = vect[l];  // pivô
+    int i = l + 1;
     int j = r;
-    while(i < j) {
-        while(vect[i] <= p && i < r) {
-            i++;
+    while(i <= j) {
+        while(i <= r && vect[i] <= p) i++;
+        while(j >= l && vect[j] > p) j--;
+        if(i < j) {
+            swap(vect[i], vect[j]);
         }
-        while(vect[j] > p) {
-            j--;
-        }
-        swap(vect[i], vect[j]);
     }
-    swap(vect[i], vect[j]);
     swap(vect[l], vect[j]);
     return j;
 }
