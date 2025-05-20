@@ -2,7 +2,27 @@
 
 using namespace std;
 
+// Melhor forma que encontrei de realizar o quicksort
+int partition(vector<int>& vect, int l, int r) {
+    int p = vect[l];
+    int i = l;
+    int j = r+1;
+    do {
+        do {
+            i++;
+        } while (vect[i] <= p && i <= r);
+        do {
+            j--;
+        } while(vect[j] > p);
+        swap(vect[i], vect[j]);
+    } while (i <= j);
+    swap(vect[i], vect[j]);
+    swap(vect[l], vect[j]);
+    return j;
+}
+
 // Versão que eu consegui realizar o quicksort corretamente
+/*
 int partition(vector<int>& vect, int l, int r) {
     int p = vect[l];
     int i = l-1;
@@ -22,6 +42,8 @@ int partition(vector<int>& vect, int l, int r) {
     swap(vect[l], vect[j]);
     return j;
 }
+*/
+
 
 // Versão corrigida
 /*
@@ -50,7 +72,7 @@ void quick_sort(vector<int>& vect, int l, int r) {
 }
 
 int main() {
-    vector<int> arr = {5, 3, 1, 9, 8, 2, 4, 7};
+    vector<int> arr = {5, 3, 1, 9, 8, 2, 4, 7, 6};
     quick_sort(arr, 0, arr.size()-1);
     for(int num : arr) {
         cout << num << " ";
