@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Realizando a busca binária em cima de uma lista ordenada
 bool b_search(int num, vector<int> arr) {
     int l = 0; int r = arr.size()-1;
     while(l <= r) {
