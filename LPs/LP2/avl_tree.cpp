@@ -146,16 +146,18 @@ class AVL_Tree {
             // Rotações usando o balanceamento de cada nó
             rt->height = max(h(rt->left), h(rt->right)) + 1;
             int balance = getBalance(rt);
-            if (balance > 1 && getBalance(rt->left) >= 0)
+            if (balance > 1 && getBalance(rt->left) >= 0) {
                 return right_rotate(rt);
+            }
 
             if (balance > 1 && getBalance(rt->left) < 0) {
                 rt->left = left_rotate(rt->left);
                 return right_rotate(rt);
             }
 
-            if (balance < -1 && getBalance(rt->right) <= 0)
+            if (balance < -1 && getBalance(rt->right) <= 0) {
                 return left_rotate(rt);
+            }
 
             if (balance < -1 && getBalance(rt->right) > 0) {
                 rt->right = right_rotate(rt->right);
