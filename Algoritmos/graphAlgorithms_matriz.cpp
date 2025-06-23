@@ -10,7 +10,8 @@ using namespace std;
 /* 
 Implementando o tipo abstrato de 
 dados para representar um grafo e 
-seus métodos de travessia.
+seus métodos de travessia usando 
+uma matriz de adjacências.
 */
 
 // Graph Abstract Data Type (ADT)
@@ -27,14 +28,17 @@ class Graph {
             mark = vector<int>(n, 0);
         }
 
+        // Retorna a quantidade de vértices
         int n(){
             return matrix.size();
         }
 
+        // Cria uma conexão entre vértices
         int e(){
             return numEdge;
         }
 
+        // Retorna o primeiro vértice que se conecta com o vértice v
         int first(int v) {
             for(int i = 0; i < n(); i++) {
                 if(matrix[v][i] != 0) {
@@ -44,6 +48,7 @@ class Graph {
             return n();
         }
 
+        // Retorna o próximo vértice que v se conecta após w
         int next(int v, int w) {
             for(int i = w + 1; i < n(); i++) {
                 if(matrix[v][i] != 0) {
@@ -53,25 +58,31 @@ class Graph {
             return n();
         }
 
+        // Cria uma conexão entre vértices
         void setEdge(int i, int j, int wt) {
             if(wt == 0) { cout << "Erro" << "\n"; return; }
             if(matrix[i][j] == 0) { numEdge++; }
             matrix[i][j] = wt;
         }
 
+        // Remove uma conexão entre vértices
         void delEdge(int i, int j) {
             if(matrix[i][j] != 0) { numEdge--; }
             matrix[i][j] = 0;
         }
 
+        // Checa se existe uma conexão entre vértices
         bool isEdge(int i, int j) {
             return matrix[i][j] != 0;
         }
 
+        // O grafo que eu usei de exemplo não é ponderado, no caso de um grafo ponderado 
+        // eu teria que usar um pair<int, int> para indicar o vértice e o peso da conexão
         int weight(int i, int j) {
             return matrix[i][j];
         }
 
+        // Set e get mark verificam e alteram o estado de visitação de cada vértice
         void setMark(int v, int val) {
             mark[v] = val;
         }
