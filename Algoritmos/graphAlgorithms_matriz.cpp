@@ -121,7 +121,6 @@ void BFS(Graph& g, int start) {
             }
             w = g.next(v, w);
         }
-
     }
 }
 
@@ -139,7 +138,7 @@ void graphTraverse(Graph& g) {
 
 int main() {
     Graph g(6);
-
+    
     g.setEdge(0, 2, 1); g.setEdge(2, 0, 1);
     g.setEdge(0, 4, 1); g.setEdge(4, 0, 1);
     g.setEdge(1, 2, 1); g.setEdge(2, 1, 1);
