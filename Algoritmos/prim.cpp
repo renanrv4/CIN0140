@@ -4,6 +4,8 @@ using namespace std;
 
 #define ti tuple<int, int, int>
 
+// Implementando o algoritmo de Prim para gerar MSTs
+
 void prim(vector<vector<pair<int, int>>>& graph) {
     priority_queue<ti, vector<ti>, greater<ti>> heap;
     vector<int> distances(graph.size(), INT_MAX);
