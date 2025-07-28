@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// Segunda questão da lista prática de backtracking
+
 bool escaped = false;
 
 void move(vector<vector<char>>& maze, int n, int m, int i, int j, vector<vector<vector<vector<bool>>>>& visited, bool found, int qtd_traps) {

@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// Primeira questão da lista prática de backtracking
+
 bool valid_opt(vector<vector<int>>& sudoku, int row, int col, int ii) {
     for(int i = 0; i < sudoku.size(); i++) {
         if(sudoku[row][i] == ii || sudoku[i][col] == ii) {
