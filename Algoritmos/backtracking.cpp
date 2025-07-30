@@ -24,3 +24,39 @@ int main() {
     all_subsets(set, 0);
     return 0;
 }
+
+/*
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool exist = false;
+
+void exist_subset(vector<int>& numbers, int j, int k, int& sum) {
+    if(sum != k) {
+        for(int i = j; i < numbers.size(); i++) {
+            sum += numbers[i];
+            exist_subset(numbers, i+1, k, sum);
+            sum -= numbers[i];
+        }
+    } else {
+        exist = true;
+    }
+}
+
+int main() {
+    int n, k; cin >> n >> k;
+    vector<int> numbers(n, 0);
+    for(int i = 0; i < n; i++) {
+        cin >> numbers[i];
+    }
+    int sum = 0;
+    exist_subset(numbers, 0, k, sum);
+    if(exist) {
+        cout << "EXISTE" << "\n";
+    } else {
+        cout << "N EXISTE" << "\n";
+    }
+    return 0;
+}
+*/
