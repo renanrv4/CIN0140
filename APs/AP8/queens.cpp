@@ -4,6 +4,16 @@ using namespace std;
 
 vector<vector<vector<int>>> all_sols;
 
+/*
+O problema das N rainhas consiste em encontrar um posicionamento para N rainhas em um tabuleiro de dimensões N x N, de forma que nenhuma delas consiga, de acordo com as regras do xadrez, se atacar. Dado N, encontre todas as soluções possíveis para o problema das N rainhas para esse tabuleiro.
+
+ENTRADA
+
+A primeira e única linha de entrada contém o inteiro N (1 ≤ N ≤ 20).
+
+4
+*/
+
 bool valid(vector<vector<int>>& tabuleiro, int l, int i) {
     for(int j = 0; j < l; j++) {
         if(tabuleiro[j][i] == 1) {

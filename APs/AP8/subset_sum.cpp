@@ -2,6 +2,17 @@
 
 using namespace std;
 
+/*
+Dado o conjunto C de inteiros, encontre um subconjunto de C cuja soma de seus elementos é igual a S.
+
+ENTRADA
+
+A primeira linha da entrada contém os inteiros n e S, a quantidade de elementos no conjunto C e a soma desejada. A próxima linha contém n inteiros, os elementos do conjunto C.
+
+5 10
+3 1 6 4 5
+*/
+
 void print(vector<int>& set, vector<bool>& subset) {
     for(int i = 0; i < set.size(); i++) {
         if(subset[i]) {
