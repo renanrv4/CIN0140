@@ -24,7 +24,7 @@ int dp(int n, int W, vector<int>& w, vector<int>& v, vector<vector<int>>& F) {
 // Top-down
 
 int dp_top(int i, int j, vector<int>& w, vector<int>& v, vector<vector<int>>& F) {
-    if (i == 0 || j == 0) return 0;
+    if (i == 0 || j == 0) { return 0; }
     if(F[i][j] < 0) {
         int value;
         if(j < w[i]) {
